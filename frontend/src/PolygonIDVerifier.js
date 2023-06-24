@@ -108,8 +108,8 @@ function PolygonIDVerifier({
   return (
     <div>
       {sessionId ? (
-        <Button colorScheme="purple" onClick={onOpen} margin={4}>
-          Prove access rights
+        <Button colorScheme="green" onClick={onOpen} margin={4}>
+          Request Gieve Redemption
         </Button>
       ) : (
         <Spinner />
