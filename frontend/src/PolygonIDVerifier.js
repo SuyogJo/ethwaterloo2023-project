@@ -128,7 +128,7 @@ function PolygonIDVerifier({
               >
                 Polygon ID Wallet App
               </a>{" "}
-              to prove access rights
+              to redeem Gieve aide
             </ModalHeader>
             <ModalCloseButton />
             <ModalBody textAlign={"center"} fontSize={"12px"}>
@@ -159,23 +159,15 @@ function PolygonIDVerifier({
             </ModalBody>
 
             <ModalFooter>
-              <Button
+              {/* <Button
                 fontSize={"10px"}
-                margin={1}
-                colorScheme="purple"
+               // margin={1}
+                colorScheme="green"
                 onClick={() => openInNewTab(linkDownloadPolygonIDWalletApp)}
               >
                 Download the Polygon ID Wallet App{" "}
                 <ExternalLinkIcon marginLeft={2} />
-              </Button>
-              <Button
-                fontSize={"10px"}
-                margin={1}
-                colorScheme="purple"
-                onClick={() => openInNewTab(issuerOrHowToLink)}
-              >
-                Get a {credentialType} VC <ExternalLinkIcon marginLeft={2} />
-              </Button>
+              </Button> */}
             </ModalFooter>
           </ModalContent>
         </Modal>
