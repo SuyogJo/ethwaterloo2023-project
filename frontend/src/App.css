@@ -12,3 +12,14 @@
 #vc-gated-dapp ul {
   margin-left: 20px;
 }
+
+.backdrop {
+  background: rgb(41,30,133);
+  background: linear-gradient(180deg, rgba(41,30,133,1) 0%, rgba(70,33,162,1) 60%, rgba(70,6,255,0.7861738445378151) 100%);
+}
+
+.text.title {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: 800;
+  color: aqua;
+}
