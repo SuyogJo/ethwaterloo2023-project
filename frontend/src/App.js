@@ -20,6 +20,7 @@ function App() {
       ) : (
         <Center className="vc-check-page">
           <Container>
+            <Text fontSize="3xl">{"Reuben's Pharmacy"}</Text>
             <Card
               style={{
                 border: "2px solid #8A9A5B",

@@ -126,7 +126,7 @@ function PolygonIDVerifier({
                 target="_blank"
                 rel="noreferrer"
               >
-                Polygon ID Wallet App
+                Polygon ID Enabled Wallet App
               </a>{" "}
               to redeem Gieve aide
             </ModalHeader>
