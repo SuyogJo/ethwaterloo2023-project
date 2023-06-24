@@ -48,3 +48,5 @@ If you successfully complete age verification, you'll see a success message, the
 This is the Dapp page that you see once you've proved access rights. It's set up with a RainbowKit wallet connector and has read and write to smart contract examples.
 
 <img width="1134" alt="Screenshot 2023-06-23 at 10 52 19 AM" src="https://github.com/oceans404/fullstack-polygon-id-vc-gated-dapp/assets/91382964/7e89b2b8-fb78-42df-9bc1-5938198af3a8">
+
+# slayy !!
