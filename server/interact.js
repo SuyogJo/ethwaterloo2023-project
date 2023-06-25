@@ -1,8 +1,8 @@
 // Ethers logic 
 
 // FIGURE OUT HOW TO PUT THIS UNDER ETHERSDATA.JS
-const privateKey = '0x82f39eb5cc629f6910ac3f41a99afebe3405c2c3d3d514b20c948a47742d1b9b';
-const contractAddress = '0x1e2d0b7273669E4F8F769676974fe34766014EB8';
+const privateKey = 'PRIVATE-KEY-OF-CONTRACT-OWNER'; 
+const contractAddress = 'PUBLIC-KEY-OF-CONTRACT';
 
 const ethers = require('ethers');
 // const provider = new ethers.providers.Web3Provider(window.ethereum);

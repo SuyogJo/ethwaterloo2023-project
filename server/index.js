@@ -11,11 +11,13 @@ require("dotenv").config();
 const app = express();
 const port = 8080;
 
-app.use(
-  cors({
-    origin: process.env.FRONTEND_URL,
-  })
-);
+app.use(cors())
+
+// app.use(
+//   cors({
+//     origin: process.env.FRONTEND_URL,
+//   })
+// );
 
 app.get("/", (req, res) => {
   res.send(
@@ -37,9 +39,22 @@ app.get("/balance", async (req, res) => {
   // res.send("This is the balance route");
 });
 
+app.get("/merchantBalance", async (req, res) => {
+
+  let m = await something.balance("0x5cBe2ebDCD0C12B70630De8C80b111f4dfEb369c");
+  res.send(
+    `${
+      m
+    }`
+  );
+ //res.sendStatus(x);
+  // res.send("This is the balance route");
+});
+
+
 app.get("/contract", async (req, res) => {
 
-  let y = await something.callContractFunction("0x5cBe2ebDCD0C12B70630De8C80b111f4dfEb369c", 10);
+  let y = await something.callContractFunction("0x5cBe2ebDCD0C12B70630De8C80b111f4dfEb369c", 1000000000000);
   res.send(
     `${
       y

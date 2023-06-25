@@ -15,12 +15,12 @@ function App() {
     const fetchData = () => {
       // Make an API call to fetch data from the backend
       // Replace the URL with your actual backend endpoint
-      fetch("http://worldtimeapi.org/api/timezone/America/Toronto")
+      fetch("http://localhost:8080/balance")
         .then((response) => response.json())
         .then((data) => {
           const stringifiedData = JSON.stringify(data);
           setData(data);
-          setRedemptionPoolAmount(data.datetime)
+          setRedemptionPoolAmount(data)
         })
         .catch((error) => {
           console.log("Error fetching data:", error);
@@ -30,7 +30,36 @@ function App() {
     fetchData();
 
     // Polling interval in milliseconds
-    const pollingInterval = 20000; // 5 seconds
+    const pollingInterval = 5000; // 5 seconds
+    // Start polling using setInterval
+    const intervalId = setInterval(fetchData, pollingInterval);
+
+    // Clean up the interval on component unmount
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, []);
+
+  useEffect(() => {
+    const fetchData = () => {
+      // Make an API call to fetch data from the backend
+      // Replace the URL with your actual backend endpoint
+      fetch("http://localhost:8080/merchantBalance")
+        .then((response) => response.json())
+        .then((data) => {
+          const stringifiedData = JSON.stringify(data);
+          setData(data);
+          setRedeemedAmount(data)
+        })
+        .catch((error) => {
+          console.log("Error fetching data:", error);
+        });
+    };
+    // Fetch data initially
+    fetchData();
+
+    // Polling interval in milliseconds
+    const pollingInterval = 5000; // 5 seconds
     // Start polling using setInterval
     const intervalId = setInterval(fetchData, pollingInterval);
 
@@ -90,16 +119,7 @@ function App() {
                   }
                   
                   onVerificationResult={() => {
-                    fetch('../../server/interact.js', {
-                      method: 'POST',
-                      body: JSON.stringify({
-                        receipientAddress: '0x5cBe2ebDCD0C12B70630De8C80b111f4dfEb369c',
-                        amountOfFund: `${amount}`
-                      }),
-                      headers: {
-                        'Content-type': 'application/json; charset=UTF-8',
-                      },
-                    })
+                    fetch('http://localhost:8080/contract')
                        .then((response) => response.json())
                        .then((data) => {
                           console.log(data);
