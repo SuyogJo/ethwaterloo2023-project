@@ -4,7 +4,6 @@ const getRawBody = require("raw-body");
 const { Server } = require("socket.io");
 const cors = require("cors");
 const { humanReadableAuthReason, proofRequest } = require("./proofRequest");
-
 const balance = require("./interact.js");
 
 require("dotenv").config();
@@ -26,9 +25,15 @@ app.get("/", (req, res) => {
   );
 });
 
-app.get("/balance", (req, res) => {
-  x= balance();
-  res.send("hellaur");
+app.get("/balance", async (req, res) => {
+
+  let x = await balance("0x1e2d0b7273669E4F8F769676974fe34766014EB8");
+  res.send(
+    `X: ${
+      x
+    } o`
+  );
+ //res.sendStatus(x);
   // res.send("This is the balance route");
 });
 
