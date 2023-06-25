@@ -1,3 +1,5 @@
+# For our Smart Contract code, please access this repo: https://github.com/changisaac/GieveContract (Smart Contract)
+
 # This is a template for creating your own VC Gated Dapp
 
 This template spins up a dapp that is 
