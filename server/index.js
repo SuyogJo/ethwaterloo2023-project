@@ -5,6 +5,8 @@ const { Server } = require("socket.io");
 const cors = require("cors");
 const { humanReadableAuthReason, proofRequest } = require("./proofRequest");
 
+const balance = require("./interact.js");
+
 require("dotenv").config();
 
 const app = express();
@@ -22,6 +24,12 @@ app.get("/", (req, res) => {
       Object.keys(apiPath).length
     } routes available: ${Object.values(apiPath).join(" and ")}.`
   );
+});
+
+app.get("/balance", (req, res) => {
+  x= balance();
+  res.send("hellaur");
+  // res.send("This is the balance route");
 });
 
 const server = app.listen(port, () => {
