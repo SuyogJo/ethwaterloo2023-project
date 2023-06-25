@@ -10,17 +10,17 @@ function App() {
   const [provedAccessBirthday, setProvedAccessBirthday] = useState(false);
 
   // This is your currency number you want to display
-  const [redemptionPoolAmount, setRedemptionPoolAmount] = useState(0);
+  const [redemptionPoolAmount, setRedemptionPoolAmount] = useState("Will determine from smart contract through ethers.js");
   const [redeemedAmount, setRedeemedAmount] = useState(0);
 
   return (
-    <>
+    <div className="backdrop">
       {provedAccessBirthday ? (
         <VcGatedDapp />
       ) : (
         <Center className="vc-check-page">
           <Container>
-            <Text fontSize="3xl">{"Reuben's Pharmacy"}</Text>
+            <Text fontFamily={"sans-serif"} as='b' color="#ffc872" fontSize="5xl">{"Reuben's Pharmacy"}</Text>
             <Card
               style={{
                 border: "2px solid #8A9A5B",
@@ -67,7 +67,7 @@ function App() {
           </Container>
         </Center>
       )}
-    </>
+    </div>
   );
 }
 
