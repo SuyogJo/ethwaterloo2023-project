@@ -41,5 +41,7 @@ async function balance(balanceAddress) {
     return result; 
 }
 
-module.exports = balance;
-// module.exports = callContractFunction;  
+module.exports = {
+  balance, 
+  callContractFunction,
+};
